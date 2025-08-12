@@ -1,35 +1,48 @@
 @import './base.css';
 
+/* Reset app container to full-height layout */
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  height: 100%;
   font-weight: normal;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+/* Form layout helpers */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.form .actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+/* Simple scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gray-300) transparent;
+}
+*::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray-300);
+  border-radius: 999px;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+/* Headings */
+h1,h2,h3 {
+  color: var(--color-heading);
+  font-weight: 700;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+/* Accent underline utility */
+.underline-accent {
+  background-image: linear-gradient(120deg, rgba(255, 188, 66, 0.3) 0%, rgba(255,188,66,0.3) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% .35em;
+  background-position: 0 88%;
 }
